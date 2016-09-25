@@ -1,7 +1,9 @@
 header(data-ng-controller="HeaderController", data-ng-class="{'disabled': hideFilters === true }")
     form.search
-        p.warning(data-ng-if="showInfo") Wybierz miasto.
-        .container
+        alert.alert-danger(data-ng-if="showInfo")
+            a(href="#", class="close", data-dismiss="alert", aria-label="close") &times;
+            | Wybierz miasto.
+        .containers
             .col-sm-6
                 .list
                     label
@@ -13,6 +15,7 @@ header(data-ng-controller="HeaderController", data-ng-class="{'disabled': hideFi
                         | interpelacje
             .col-sm-6
                 .select.cities
-                    select(data-ng-model="search.city")
-                        option(data-ng-repeat="city in cities", data-ng-bind="city.cityName", value="{{ city }}")
-                    input.btn.btn-primary.pull-right(type="submit", data-ng-click="showResult()")
+                    select.col-xs-6(data-ng-model="search.city")
+                        option(data-ng-bind="'Wybierz miasto'")
+                        option(data-ng-repeat="city in cities", data-ng-bind="city.city_name", value="{{ city }}")
+                    input.btn.btn-primary.col-xs-6.pull-right(type="submit", data-ng-click="showResult()")

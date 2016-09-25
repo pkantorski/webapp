@@ -3,19 +3,18 @@ hackathonApp.controller('HeaderController', ['$scope', '$rootScope', '$http', fu
     $scope.parameters = [];
     $rootScope.marker = [];
     $rootScope.markerDetail = [];
-    $scope.search = {};
+    $scope.search = null;
     $scope.showInfo = false;
     $rootScope.parametersList = [{ param1: "oferty pracy" }, { param2: "interpelacje" }];
 
-    $http.get('/cities').then(function(success) {
+    $http.get('/config').then(function(success) {
         $scope.cities = success.data;
-        $scope.parameters = success.data.parameters;
     });
 
     $scope.showResult = function() {
-        $scope.search.city = JSON.parse($scope.search.city);
-        $rootScope.actualCoords = [$scope.search.city.lat, $scope.search.city.long];
-        if ($scope.search.city) {
+        if ($scope.search) {
+            $scope.search.city = JSON.parse($scope.search.city);
+            $rootScope.actualCoords = [$scope.search.city.lat, $scope.search.city.lng];
             $scope.showInfo = false;
             var searchList = [];
             angular.forEach($scope.search, function(value, key) {
@@ -41,6 +40,7 @@ hackathonApp.controller('HeaderController', ['$scope', '$rootScope', '$http', fu
                 $rootScope.rightBar = true;
                 $rootScope.mapZoom = 12;
             }
+            $scope.search = null;
         } else {
             $scope.showInfo = true;
         }

@@ -2,7 +2,7 @@ hackathonApp.controller('ModalController',
     ['$scope', '$rootScope', '$uibModal', '$uibModalInstance', 'response', '$http',
         function($scope, $rootScope, $uibModal, $uibModalInstance, response, $http) {
             $scope.response = response.oferta;
-            console.log( $scope.response);
+
             $scope.ok = function() {
                 $uibModalInstance.close();
             };
