@@ -15,6 +15,7 @@ hackathonApp.controller('HeaderController', ['$scope', '$rootScope', '$http', fu
         if ($scope.search) {
             $scope.search.city = JSON.parse($scope.search.city);
             $rootScope.actualCoords = [$scope.search.city.lat, $scope.search.city.lng];
+            $rootScope.cityCoords = [$scope.search.city.lat, $scope.search.city.lng];
             $scope.showInfo = false;
             var searchList = [];
             angular.forEach($scope.search, function(value, key) {
@@ -28,7 +29,9 @@ hackathonApp.controller('HeaderController', ['$scope', '$rootScope', '$http', fu
                 city: $scope.search.city.city,
                 parameter: searchList
             };
-            $http.get('/markers', searchData).then(function(success) {
+            $http.get('http://127.0.0.1:8000/markers', searchData, {
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).then(function (success) {
                 $rootScope.marker = success.data;
                 $rootScope.markerDetail = success.data;
             }, function(e) {

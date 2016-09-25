@@ -18,7 +18,7 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
     $scope.showBackButton = false;
     $scope.icon ={
         "path": "CIRCLE",
-        "scale": 8,
+        "scale": 6,
         "strokeColor": "#F00",
         "fillColor": "#F00"
     };
@@ -53,14 +53,15 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
         $scope.showBackButton = false;
         $rootScope.mapZoom = 11;
         $rootScope.markerDetail = $rootScope.marker;
-        if ($rootScope.geolocation) {
+        $rootScope.actualCoords = $rootScope.cityCoords;
+        /*if ($rootScope.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 $rootScope.actualCoords = [position.coords.latitude, position.coords.longitude];
             }, function(err) {
                 console.log(err);
                 $rootScope.actualCoords = [52.4064,16.9252];
             });
-        }
+        }*/
     };
 
     $scope.showModal = function(details) {
