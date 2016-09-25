@@ -19,8 +19,28 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
     $scope.icon ={
         "path": "CIRCLE",
         "scale": 8,
-        "strokeColor": "#F00",
-        "fillColor": "#F00"
+        "strokeColor": "#b90000",
+        "fillColor": "#b90000"
+    };
+    $scope.iconList = {
+        "1": {
+            "path": "CIRCLE",
+            "scale": 8,
+            "strokeColor": "#03396c",
+            "fillColor": "#03396c"
+        },
+        "2": {
+            "path": "CIRCLE",
+            "scale": 8,
+            "strokeColor": "#b90000",
+            "fillColor": "#b90000"
+        },
+        "3": {
+            "path": "CIRCLE",
+            "scale": 8,
+            "strokeColor": "#666684",
+            "fillColor": "#666684"
+        }
     };
 
     NgMap.getMap().then(function(map) {

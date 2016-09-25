@@ -54,6 +54,16 @@ body {
             transition: left .7s;
             box-shadow: 2px 0 5px #000;
             border-right: 2px solid #007082;
+            /*&::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                top: 0;
+                height: 100%;
+                background: #007281;
+                left: 0;
+                OPACITY: 0.7;
+            }*/
             @media (max-width: 768px) {
                 height: 300px; width: 100%;
                 bottom: -0; top: auto; left: 0;
