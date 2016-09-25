@@ -11,8 +11,14 @@ header {
   -o-transition: top 0.7s;
   transition: top 0.7s;
   border-bottom: 2px solid #007082;
+  @media (max-width: 768px) {
+    position: relative;
+  }
   &.disabled {
     top: -500px;
+    @media (max-width: 768px) {
+      top: 0;
+    }
   }
   .search {
     padding: 45px 0;
@@ -50,8 +56,14 @@ header {
   position: absolute;
   bottom: 0; right: 0;
   z-index: 9; width: 100%;
+  @media (max-width: 768px) {
+    display: none;
+  }
   &.back {
     bottom: 42px;
+    @media (max-width: 768px) {
+      display: block; bottom: 0;
+    }
   }
   .btn {
     -webkit-border-radius: 0;
@@ -64,4 +76,5 @@ header {
     padding: 5px 25px !important;
     width: 100%; text-transform: uppercase;
   }
+
 }
