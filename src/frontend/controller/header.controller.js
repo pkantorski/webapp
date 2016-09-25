@@ -5,7 +5,7 @@ hackathonApp.controller('HeaderController', ['$scope', '$rootScope', '$http', fu
     $rootScope.markerDetail = [];
     $scope.search = {};
     $scope.showInfo = false;
-    $rootScope.parametersList = [{ param1: "oferty pracy" }, { param2: "interpolacje" }, { param3: "zarządzenia prezydenta" }, { param4: "zarządzenia rady miasta" }, { param5: "przetargi" }];
+    $rootScope.parametersList = [{ param1: "oferty pracy" }, { param2: "interpelacje" }];
 
     $http.get('/cities').then(function(success) {
         $scope.cities = success.data;
@@ -26,7 +26,7 @@ hackathonApp.controller('HeaderController', ['$scope', '$rootScope', '$http', fu
                 }
             });
             var searchData = {
-                city: $scope.search.city.cityName,
+                city: $scope.search.city.city,
                 parameter: searchList
             };
             $http.get('/markers', searchData).then(function(success) {
@@ -39,7 +39,7 @@ hackathonApp.controller('HeaderController', ['$scope', '$rootScope', '$http', fu
             if ($rootScope.markerDetail) {
                 $rootScope.hideFilters = true;
                 $rootScope.rightBar = true;
-                $rootScope.mapZoom = 11;
+                $rootScope.mapZoom = 12;
             }
         } else {
             $scope.showInfo = true;

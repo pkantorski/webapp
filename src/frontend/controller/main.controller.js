@@ -13,9 +13,15 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
         $rootScope.geolocation = false;
     }
 
-    $rootScope.mapZoom = 11;
+    $rootScope.mapZoom = 12;
     $rootScope.rightBar = false;
     $scope.showBackButton = false;
+    $scope.icon ={
+        "path": "CIRCLE",
+        "scale": 8,
+        "strokeColor": "#F00",
+        "fillColor": "#F00"
+    };
 
     NgMap.getMap().then(function(map) {
         map.getCenter();
@@ -25,7 +31,7 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
         $rootScope.markerDetail = [$rootScope.marker[v]];
         if ($rootScope.markerDetail) {
             $rootScope.actualCoords = [$rootScope.markerDetail[0].lat, $rootScope.markerDetail[0].lng];
-            $rootScope.mapZoom = 14;
+            $rootScope.mapZoom = 16;
             $rootScope.rightBar = true;
             $scope.showBackButton = true;
         }
@@ -36,7 +42,7 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
             $rootScope.markerDetail = [$rootScope.marker[v]];
             if ($rootScope.markerDetail) {
                 $rootScope.actualCoords = [$rootScope.markerDetail[0].lat, $rootScope.markerDetail[0].lng];
-                $rootScope.mapZoom = 14;
+                $rootScope.mapZoom = 16;
                 $rootScope.rightBar = true;
                 $scope.showBackButton = true;
             }

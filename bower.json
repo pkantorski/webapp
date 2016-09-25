@@ -7,7 +7,6 @@
   "license": "MIT",
   "dependencies": {
     "jquery": "~2.1.4",
-    "underscore": "~1.8.3",
     "bootstrap-sass": "~3.3.5",
     "angular-bootstrap": "~0.14.2",
     "malihu-custom-scrollbar-plugin": "~3.0.9",
@@ -24,9 +23,6 @@
     },
     "jquery-cookie": {
       "main": "./jquery.cookie.js"
-    },
-    "underscore": {
-      "main": "./underscore-min.js"
     },
     "bootstrap-sass": {
       "main": "./assets/javascripts/bootstrap.min.js"
