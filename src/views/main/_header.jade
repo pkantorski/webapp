@@ -26,5 +26,5 @@ header(data-ng-controller="HeaderController", data-ng-class="{'disabled': hideFi
             .col-sm-6
                 .select.cities
                     select(data-ng-model="search.city")
-                        option(data-ng-repeat="city in cities", data-ng-bind="city", value="{{ city }}")
+                        option(data-ng-repeat="city in cities", data-ng-bind="city.cityName", value="{{ city }}")
                     input.btn.btn-primary.pull-right(type="submit", data-ng-click="showResult()")

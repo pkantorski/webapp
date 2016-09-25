@@ -1,36 +1,25 @@
 [
     {
-        "positions": [52.3764, 16.9452],
-        "icon": {
-            "path": "CIRCLE",
-            "scale": 6,
-            "strokeColor": "#F00",
-            "fillColor": "#F00"
-        },
-        "description": "Przypadkowy opis 1",
-        "name": "Nazwa 1",
-        "link": false
-    }, {
-        "positions": [52.3564, 16.9852],
-        "icon": {
-            "path":"CIRCLE",
-            "scale": 6,
-            "strokeColor": "#000",
-            "fillColor": "#000"
-        },
-        "description": "Przypadkowy opis 2",
-        "name": "Nazwa 2",
-        "link": true
-    }, {
-        "positions": [52.3064, 16.9552],
-        "icon": {
-            "path":"CIRCLE",
-            "scale": 6,
-            "strokeColor": "#FFF",
-            "fillColor": "#FFF"
-        },
-        "description": "Przypadkowy opis 3",
-        "name": "Nazwa 3",
-        "link": false
+        "id": "1",
+        "subject": "referent ds. kadr - Zespół Szkół z Oddziałami Integracyjnymi Nr 3 (Szkoła Podstawowa Nr 75 im. Powstańców Wielkopolskich, Gimnazjum Nr 2 im. Powstańców Wielkopolskich)",
+        "date": "2016-09-05",
+        "lat": "52.406374",
+        "lng": "16.9251681",
+        "city": "3064",
+        "category": "2",
+        "internal_id": "21198",
+        "details": "http://bip.poznan.pl/bip/praca.html?co=print&of_id=21198&api=json"
+    },
+    {
+        "id": "27",
+        "subject": "Interpelacja ws. opracowania koncepcji budowy ronda na skrzyżowaniu ulic Kurlandzkiej-Wiatracznej",
+        "date": "2016-09-22",
+        "attachments": { "urls": ["http:\/\/bip.poznan.pl\/bip\/interpelacje.html?co=show&noteid=NT0001186A&id=4328372&api=json"] },
+        "street": "Kurlandzkiej",
+        "lat": "52.3817546",
+        "lng": "16.977035",
+        "city": "3064",
+        "category": "1",
+        "internal_id": "NT0001186A"
     }
 ]

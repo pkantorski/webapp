@@ -1,8 +1,16 @@
 hackathonApp.controller('ModalController',
-    ['$scope', '$rootScope', '$uibModal', '$uibModalInstance', 'response',
-        function($scope, $rootScope, $uibModal, $uibModalInstance, response) {
+    ['$scope', '$rootScope', '$uibModal', '$uibModalInstance', 'response', '$http',
+        function($scope, $rootScope, $uibModal, $uibModalInstance, response, $http) {
             $scope.response = response;
 
+            if ($scope.response) {
+                console.log($scope.response);
+                $http.jsonp($scope.response).then(function(success) {
+                    console.log('asd');
+                }, function(e) {
+                    console.log(e);
+                });
+            }
             $scope.ok = function() {
                 $uibModalInstance.close();
             };

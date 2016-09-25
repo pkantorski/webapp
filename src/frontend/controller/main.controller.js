@@ -4,10 +4,10 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
     if ('geolocation' in navigator) {
         $rootScope.geolocation = true;
         navigator.geolocation.getCurrentPosition(function(position) {
-            $scope.actualCoords = [position.coords.latitude, position.coords.longitude];
+            $rootScope.actualCoords = [position.coords.latitude, position.coords.longitude];
         }, function(err) {
             console.log(err);
-            $scope.actualCoords = [52.4064,16.9252];
+            $rootScope.actualCoords = [52.4064,16.9252];
         });
     } else {
         $rootScope.geolocation = false;
@@ -24,7 +24,7 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
     $scope.showDescription = function(k, v) {
         $rootScope.markerDetail = [$rootScope.marker[v]];
         if ($rootScope.markerDetail) {
-            $scope.actualCoords = [$rootScope.markerDetail[0].positions[0], $rootScope.markerDetail[0].positions[1]];
+            $rootScope.actualCoords = [$rootScope.markerDetail[0].lat, $rootScope.markerDetail[0].lng];
             $rootScope.mapZoom = 14;
             $rootScope.rightBar = true;
             $scope.showBackButton = true;
@@ -35,7 +35,7 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
         if ($rootScope.markerDetail.length > 1) {
             $rootScope.markerDetail = [$rootScope.marker[v]];
             if ($rootScope.markerDetail) {
-                $scope.actualCoords = [$rootScope.markerDetail[0].positions[0], $rootScope.markerDetail[0].positions[1]];
+                $rootScope.actualCoords = [$rootScope.markerDetail[0].lat, $rootScope.markerDetail[0].lng];
                 $rootScope.mapZoom = 14;
                 $rootScope.rightBar = true;
                 $scope.showBackButton = true;
@@ -49,22 +49,22 @@ hackathonApp.controller('MainController', ['$scope', '$rootScope', '$', 'NgMap',
         $rootScope.markerDetail = $rootScope.marker;
         if ($rootScope.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
-                $scope.actualCoords = [position.coords.latitude, position.coords.longitude];
+                $rootScope.actualCoords = [position.coords.latitude, position.coords.longitude];
             }, function(err) {
                 console.log(err);
-                $scope.actualCoords = [52.4064,16.9252];
+                $rootScope.actualCoords = [52.4064,16.9252];
             });
         }
     };
 
-    $scope.showModal = function() {
+    $scope.showModal = function(details) {
         $rootScope.modalRedirect = $uibModal.open({
             templateUrl: 'modal',
             controller: 'ModalController',
             size: 'lg modal',
             resolve: {
                 response: function() {
-                    return false;
+                    return details;
                 }
             }
         });
