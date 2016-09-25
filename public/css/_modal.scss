@@ -1,0 +1,9 @@
+.modal-dialog {
+  display: block !important;
+  height: 300px; background: #FFF;
+  .modal-content {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

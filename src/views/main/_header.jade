@@ -1,0 +1,30 @@
+header(data-ng-controller="HeaderController", data-ng-class="{'disabled': hideFilters === true }")
+    form.search
+        p.warning(data-ng-if="showInfo") Wybierz miasto.
+        .container
+            .col-sm-6
+                .list
+                    label
+                        input(type="checkbox", name="1", value="oferty pracy", ng-model="search.param1")
+                        | oferty pracy
+                .list
+                    label
+                        input(type="checkbox", name="2", ng-model="search.param2")
+                        | interpolacje
+                .list
+                    label
+                        input(type="checkbox", name="3", ng-model="search.param3")
+                        | zarządzenia prezydenta
+                .list
+                    label
+                        input(type="checkbox", name="4", ng-model="search.param4")
+                        | zarządzenia rady miasta
+                .list
+                    label
+                        input(type="checkbox", name="5", ng-model="search.param5")
+                        | przetargi
+            .col-sm-6
+                .select.cities
+                    select(data-ng-model="search.city")
+                        option(data-ng-repeat="city in cities", data-ng-bind="city", value="{{ city }}")
+                    input.btn.btn-primary.pull-right(type="submit", data-ng-click="showResult()")
